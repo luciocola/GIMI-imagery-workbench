@@ -1,6 +1,6 @@
 # GIMI Imagery Workbench
 
-A QGIS 3.x plugin that imports HEIF (High Efficiency Image Format) imagery files and uses TTL (Turtle RDF) metadata to automatically georeference them using Ground Control Points (GCPs). Includes full **ISO 19115-4 imagery metadata** extraction and quality reporting. **NEW**: Export GeoTIFF to TB21 GIMI HEIF format with embedded RDF metadata.
+A QGIS 3.x plugin that imports HEIF (High Efficiency Image Format) imagery files and uses TTL (Turtle RDF) metadata to automatically georeference them using Ground Control Points (GCPs). Includes full **ISO 19115-4 imagery metadata** extraction and quality reporting. **NEW**: Export GeoTIFF to TB21 GIMI HEIF format with embedded RDF metadata. QGIS 4.0 available here https://github.com/luciocola/GIMI-imagery-workbench/releases/tag/v2.1.1-qgis4
 
 > **⚠ PRE-RELEASE NOTICE — CONFORMANCE TESTING NOT YET PERFORMED.**  
 > This release has **not** been checked against any formal conformance test suite (OGC, ISO, TB21 GIMI, or equivalent). Output files, metadata structures, and API behaviour may change in a subsequent release once conformance testing results are available. A new release will be issued following successful conformance validation. Use in production environments is at your own risk.

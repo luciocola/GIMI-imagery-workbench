@@ -137,11 +137,35 @@ fi
 # ── Determine QGIS plugin directory ──────────────────────────────────
 section "=== Deploying plugin files ==="
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    PLUGIN_DIR="$HOME/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins"
+    QGIS4_DIR="$HOME/Library/Application Support/QGIS/QGIS4/profiles/default/python/plugins"
+    QGIS3_DIR="$HOME/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins"
+    if [[ -d "$QGIS4_DIR" ]]; then
+        PLUGIN_DIR="$QGIS4_DIR"
+        info "Using QGIS4 profile plugin directory"
+    else
+        PLUGIN_DIR="$QGIS3_DIR"
+        info "QGIS4 profile not found, falling back to QGIS3 plugin directory"
+    fi
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    PLUGIN_DIR="$HOME/.local/share/QGIS/QGIS3/profiles/default/python/plugins"
+    QGIS4_DIR="$HOME/.local/share/QGIS/QGIS4/profiles/default/python/plugins"
+    QGIS3_DIR="$HOME/.local/share/QGIS/QGIS3/profiles/default/python/plugins"
+    if [[ -d "$QGIS4_DIR" ]]; then
+        PLUGIN_DIR="$QGIS4_DIR"
+        info "Using QGIS4 profile plugin directory"
+    else
+        PLUGIN_DIR="$QGIS3_DIR"
+        info "QGIS4 profile not found, falling back to QGIS3 plugin directory"
+    fi
 else
-    PLUGIN_DIR="$APPDATA/QGIS/QGIS3/profiles/default/python/plugins"
+    QGIS4_DIR="$APPDATA/QGIS/QGIS4/profiles/default/python/plugins"
+    QGIS3_DIR="$APPDATA/QGIS/QGIS3/profiles/default/python/plugins"
+    if [[ -d "$QGIS4_DIR" ]]; then
+        PLUGIN_DIR="$QGIS4_DIR"
+        info "Using QGIS4 profile plugin directory"
+    else
+        PLUGIN_DIR="$QGIS3_DIR"
+        info "QGIS4 profile not found, falling back to QGIS3 plugin directory"
+    fi
 fi
 
 TARGET_DIR="$PLUGIN_DIR/heif_ttl_importer"

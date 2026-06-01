@@ -1,8 +1,9 @@
 [general]
 name=GIMI Imagery Workbench
-qgisMinimumVersion=3.0
+qgisMinimumVersion=4.0
+qgisMaximumVersion=4.99
 description=Import any GDAL-readable raster (HEIF, GeoTIFF, JPEG2000 via Grok JP2GROK, ECW, HFA, NITF, PNG, JPEG …) with optional TTL/RDF metadata for GCP-based georeferencing, and export to any GDAL-writable format including GDAL 3.13 JP2GROK (Grok JPEG 2000)
-version=2.1.0
+version=2.1.1
 author=4113Eng-wfs
 email=info@example.com
 license=AGPL-3.0-only
